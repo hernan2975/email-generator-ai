@@ -1,0 +1,19 @@
+# Entorno
+.env
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Datos y modelos
+*.csv
+*.pkl
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+logs/
