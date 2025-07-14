@@ -19,3 +19,36 @@ send_prompt(prompt: str) -> str
 Returns:
 
 Respuesta generada por GPT-4.
+
+
+#### **3. `docs/EXAMPLES.md`**  
+```markdown
+# 📌 Ejemplos de Uso
+
+## Generar correo formal
+```python
+from src.generator import EmailGenerator
+
+generator = EmailGenerator()
+correo = generator.generate(
+    nombre="Carlos",
+    contexto="recordatorio de pago",
+    tono="formal"
+)
+Usar desde CLI
+python src/main.py --nombre "Ana" --contexto "agradecimiento"
+
+
+#### **4. `scripts/setup_environment.sh`**  
+```bash
+#!/bin/bash
+# Configura el entorno de desarrollo
+
+echo "Instalando dependencias..."
+pip install -e .[dev]
+
+echo "Configurando variables de entorno..."
+cp .env.template .env
+
+echo "¡Listo! Asegúrate de añadir tu API key en .env"
+
