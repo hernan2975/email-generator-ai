@@ -52,3 +52,14 @@ cp .env.template .env
 
 echo "¡Listo! Asegúrate de añadir tu API key en .env"
 
+# 📚 Referencia de API
+
+## Módulo `generator`
+### Clase `EmailGenerator`
+```python
+def generate(
+    nombre: str,
+    contexto: str,
+    tono: str = "formal",
+    detalles: str = ""
+) -> dict
