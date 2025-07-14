@@ -1,32 +1,48 @@
 📂 Estructura del Repositorio
 
 email-generator-ai/
-├── .github/                   # Configuración de GitHub
-│   ├── workflows/             # CI/CD (GitHub Actions)
-│   │   └── tests.yml          # Ejecutar pytest en cada push
-│   └── ISSUE_TEMPLATE.md      # Plantilla para reportar bugs
-├── src/                       # Código principal
-│   ├── __init__.py            # Paquete Python
-│   ├── main.py                # Punto de entrada CLI
-│   ├── generator/             # Módulo principal
-│   │   ├── __init__.py
-│   │   ├── prompts.py         # Plantillas de prompts
-│   │   ├── api_client.py      # Conexión con OpenAI
-│   │   └── postprocessor.py   # Formateo de correos
-│   └── utils/                 # Helpers
-│       ├── logging.py         # Configuración de logs
-│       └── validation.py      # Validación de inputs
-├── tests/                     # Pruebas unitarias
+├── .github/
+│   ├── workflows/
+│   │   ├── ci.yml                  # Integración continua
+│   │   ├── release.yml             # Automatización de releases
+│   │   └── codeql-analysis.yml     # Análisis de seguridad
+│   └── ISSUE_TEMPLATE/
+│       ├── bug_report.md           # Plantilla para bugs
+│       └── feature_request.md      # Plantilla para features
+├── src/
 │   ├── __init__.py
-│   ├── test_prompts.py
-│   └── test_api_client.py
-├── docs/                      # Documentación
-│   ├── API_REFERENCE.md       # Especificación de funciones
-│   └── EXAMPLES.md            # Casos de uso
-├── scripts/                   # Scripts auxiliares
-│   └── setup_environment.sh   # Instalación automática
-├── .env.template              # Plantilla para variables de entorno
-├── .gitignore                 # Archivos ignorados por Git
-├── pyproject.toml             # Dependencias y configuración (PEP 621)
-├── README.md                  # Documentación principal
-└── LICENSE                    # Licencia (MIT/Apache)
+│   ├── main.py                     # Punto de entrada CLI
+│   ├── generator/
+│   │   ├── __init__.py             # Exporta clases principales
+│   │   ├── prompts.py              # Lógica de prompts
+│   │   ├── api_client.py           # Conexión con OpenAI
+│   │   ├── postprocessor.py        # Procesamiento de respuestas
+│   │   └── exceptions.py           # Errores personalizados
+│   ├── utils/
+│   │   ├── __init__.py
+│   │   ├── logging.py              # Configuración de logs
+│   │   └── validation.py           # Validación de inputs
+│   └── templates/                  # Plantillas opcionales
+│       └── email_base.html         # HTML para correos
+├── tests/
+│   ├── __init__.py
+│   ├── conftest.py                 # Fixtures compartidos
+│   ├── test_prompts.py             # Pruebas de prompts
+│   ├── test_api_client.py          # Pruebas de API
+│   ├── test_postprocessor.py       # Pruebas de formateo
+│   └── integration/
+│       ├── __init__.py
+│       └── test_end_to_end.py      # Pruebas E2E
+├── docs/
+│   ├── API_REFERENCE.md            # Documentación técnica
+│   ├── EXAMPLES.md                 # Casos de uso
+│   └── STYLE_GUIDE.md              # Guía de estilo
+├── scripts/
+│   ├── setup_environment.sh        # Configura entorno
+│   ├── deploy.sh                   # Script de despliegue
+│   └── generate_docs.sh            # Generador de docs
+├── .env.template                   # Plantilla de variables
+├── .gitignore                      # Archivos ignorados
+├── pyproject.toml                  # Configuración Python
+├── README.md                       # Documentación principal
+└── LICENSE                         # Licencia MIT
