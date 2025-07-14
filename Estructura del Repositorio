@@ -1,0 +1,32 @@
+📂 Estructura del Repositorio
+
+email-generator-ai/
+├── .github/                   # Configuración de GitHub
+│   ├── workflows/             # CI/CD (GitHub Actions)
+│   │   └── tests.yml          # Ejecutar pytest en cada push
+│   └── ISSUE_TEMPLATE.md      # Plantilla para reportar bugs
+├── src/                       # Código principal
+│   ├── __init__.py            # Paquete Python
+│   ├── main.py                # Punto de entrada CLI
+│   ├── generator/             # Módulo principal
+│   │   ├── __init__.py
+│   │   ├── prompts.py         # Plantillas de prompts
+│   │   ├── api_client.py      # Conexión con OpenAI
+│   │   └── postprocessor.py   # Formateo de correos
+│   └── utils/                 # Helpers
+│       ├── logging.py         # Configuración de logs
+│       └── validation.py      # Validación de inputs
+├── tests/                     # Pruebas unitarias
+│   ├── __init__.py
+│   ├── test_prompts.py
+│   └── test_api_client.py
+├── docs/                      # Documentación
+│   ├── API_REFERENCE.md       # Especificación de funciones
+│   └── EXAMPLES.md            # Casos de uso
+├── scripts/                   # Scripts auxiliares
+│   └── setup_environment.sh   # Instalación automática
+├── .env.template              # Plantilla para variables de entorno
+├── .gitignore                 # Archivos ignorados por Git
+├── pyproject.toml             # Dependencias y configuración (PEP 621)
+├── README.md                  # Documentación principal
+└── LICENSE                    # Licencia (MIT/Apache)
